@@ -33,8 +33,6 @@ abstract class FileStore<T extends JsonStream.Streamable> {
          * @param context the context used to group the exception
          */
         void onErrorIOFailure(Exception exception, File errorFile, String context);
-        void onErrorIOFailure(Exception exception, File errorFile, String context);
-        void onErrorIOFailure(Exception exception, File errorFile, String context);
     }
 
     @NonNull
