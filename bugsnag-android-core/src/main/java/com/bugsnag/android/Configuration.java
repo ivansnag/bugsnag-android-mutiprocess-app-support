@@ -67,6 +67,7 @@ public class Configuration extends Observable implements Observer {
 
     private Delivery delivery;
     private int maxBreadcrumbs = DEFAULT_MAX_SIZE;
+    private String errorStore = "/bugsnag-errors/";
 
     /**
      * Construct a new Bugsnag configuration object
@@ -639,6 +640,17 @@ public class Configuration extends Observable implements Observer {
             return;
         }
         this.maxBreadcrumbs = numBreadcrumbs;
+    }
+
+
+    /**
+     * Retrieves the location for flushing on-disk errors
+     *
+     * @return the errorStore location
+     */
+
+    public String getErrorStore() {
+        return errorStore;
     }
 
     /**

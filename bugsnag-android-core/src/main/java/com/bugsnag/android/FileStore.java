@@ -33,6 +33,8 @@ abstract class FileStore<T extends JsonStream.Streamable> {
          * @param context the context used to group the exception
          */
         void onErrorIOFailure(Exception exception, File errorFile, String context);
+        void onErrorIOFailure(Exception exception, File errorFile, String context);
+        void onErrorIOFailure(Exception exception, File errorFile, String context);
     }
 
     @NonNull
@@ -47,7 +49,7 @@ abstract class FileStore<T extends JsonStream.Streamable> {
     protected final ErrorStore.Delegate delegate;
 
 
-    FileStore(@NonNull Configuration config, @NonNull Context appContext, String folder,
+    FileStore(@NonNull Configuration config, @NonNull Context appContext,
               int maxStoreCount, Comparator<File> comparator, Delegate delegate) {
         this.config = config;
         this.maxStoreCount = maxStoreCount;
@@ -56,7 +58,7 @@ abstract class FileStore<T extends JsonStream.Streamable> {
 
         String path;
         try {
-            path = appContext.getCacheDir().getAbsolutePath() + folder;
+            path = appContext.getCacheDir().getAbsolutePath() + config.getErrorStore();
 
             File outFile = new File(path);
             outFile.mkdirs();
