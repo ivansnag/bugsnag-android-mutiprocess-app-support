@@ -35,7 +35,7 @@ class SessionStore extends FileStore<Session> {
 
     SessionStore(@NonNull Configuration config, @NonNull Context appContext,
                  @Nullable Delegate delegate) {
-        super(config, appContext, "/bugsnag-sessions/",
+        super(config, appContext, config.getSessionStore(),
             128, SESSION_COMPARATOR, delegate);
     }
 

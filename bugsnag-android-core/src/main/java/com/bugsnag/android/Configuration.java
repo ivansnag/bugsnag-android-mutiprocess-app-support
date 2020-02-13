@@ -68,6 +68,7 @@ public class Configuration extends Observable implements Observer {
     private Delivery delivery;
     private int maxBreadcrumbs = DEFAULT_MAX_SIZE;
     private String errorStore = "/bugsnag-errors/";
+    private String sessionStore = "/bugsnag-sessions/";
 
     /**
      * Construct a new Bugsnag configuration object
@@ -651,6 +652,16 @@ public class Configuration extends Observable implements Observer {
 
     public String getErrorStore() {
         return errorStore;
+    }
+
+    /**
+     * Retrieves the location for sessions
+     *
+     * @return the sessionStore location
+     */
+
+    public String getSessionStore() {
+        return sessionStore;
     }
 
     /**

@@ -47,7 +47,7 @@ abstract class FileStore<T extends JsonStream.Streamable> {
     protected final ErrorStore.Delegate delegate;
 
 
-    FileStore(@NonNull Configuration config, @NonNull Context appContext,
+    FileStore(@NonNull Configuration config, @NonNull Context appContext, String folder,
               int maxStoreCount, Comparator<File> comparator, Delegate delegate) {
         this.config = config;
         this.maxStoreCount = maxStoreCount;
@@ -56,7 +56,7 @@ abstract class FileStore<T extends JsonStream.Streamable> {
 
         String path;
         try {
-            path = appContext.getCacheDir().getAbsolutePath() + config.getErrorStore();
+            path = appContext.getCacheDir().getAbsolutePath() + folder;
 
             File outFile = new File(path);
             outFile.mkdirs();

@@ -48,7 +48,7 @@ class ErrorStore extends FileStore<Error> {
     };
 
     ErrorStore(@NonNull Configuration config, @NonNull Context appContext, Delegate delegate) {
-        super(config, appContext, 128, ERROR_REPORT_COMPARATOR, delegate);
+        super(config, appContext, config.getErrorStore(), 128, ERROR_REPORT_COMPARATOR, delegate);
     }
 
     void flushOnLaunch() {
