@@ -655,6 +655,15 @@ public class Configuration extends Observable implements Observer {
     }
 
     /**
+     * Set the storage location for error information
+     *
+     * @param errorStore path to create directory to store errors
+     */
+    public void setErrorStore(String errorStore) {
+        this.errorStore = errorStore;
+    }
+
+    /**
      * Retrieves the location for sessions
      *
      * @return the sessionStore location
@@ -662,6 +671,15 @@ public class Configuration extends Observable implements Observer {
 
     public String getSessionStore() {
         return sessionStore;
+    }
+
+    /**
+     * Set the storage location for session information
+     *
+     * @param sessionStore path to create directory to store sessions
+     */
+    public void setSessionStore(String sessionStore) {
+        this.sessionStore = sessionStore;
     }
 
     /**
