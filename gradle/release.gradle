@@ -5,7 +5,7 @@ apply plugin: "com.jfrog.bintray"
 String pomName = project.getProperties().get("pomName")
 archivesBaseName = project.getProperties().get("artefactId")
 version = "${project.VERSION_NAME}"
-group = "${project.GROUP}"
+group = "Apples"
 
 // Disable doclint:
 // https://github.com/GPars/GPars/blob/312c5ae87605a0552bc72e22e3b2bd2fa1fdf98c/build.gradle#L208-L214
